@@ -5,9 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.TestSuiteManegementPage;
-import pages.TestlinkHomePage;
+import pages.*;
+import pages.TestSuiteManagementPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -32,7 +31,15 @@ public class TestSuiteTest {
     @Test
     public void positiveTestSuiteTest() {
         TestlinkHomePage homepage = new TestlinkHomePage(driver);
-
-        TestSuiteManegementPage testplanManagementPage = homepage.openTestSuiteManagementPage();
+        TestSuiteManagementPage testSuiteManagementPage = homepage.openTestSuiteManagementPage();
+        testSuiteManagementPage.openPanelTestSuite();
     }
 }
+
+        /*       TestplanManagementPage testplanManagementPage = homepage.openTestPlanManagementPage();
+        TestplanEditPage editPage = testplanManagementPage.createTestPlan();
+
+
+    }
+}
+*/
