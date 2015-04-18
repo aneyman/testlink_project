@@ -4,9 +4,7 @@ import models.TestSuite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by admin on 08.04.2015.
- */
+
 public class TestlinkHomePage {
 
     private WebDriver driver;
@@ -37,6 +35,6 @@ public class TestlinkHomePage {
     }
 
 
-    }
+}
 
 

@@ -28,8 +28,7 @@ public class TestplanTest {
     public void userLogin() {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(new User());
     }
@@ -51,8 +50,7 @@ public class TestplanTest {
     @AfterTest
     public void shutEnv() {
         //deleteTestPlan(testPlan);
-        logout();
-        if (driver != null)
+               if (driver != null)
             driver.quit();
     }
 
@@ -61,8 +59,5 @@ public class TestplanTest {
         testplanManagementPage.deleteTestPlan(testPlan);
     }
 
-    public void logout() {
-        TestlinkHomePage homePage = new TestlinkHomePage(driver);
-        homePage.logout();
-    }
+
 }

@@ -1,9 +1,7 @@
 package models;
 
-/**
- * Created by Tester on 17.04.2015.
- */
+
 public class TestSuite {
-    public String name = "BIO TestPlan";
-    public String description = "BIO default test description";
+    public String name = "BIO TestSuite";
+    public String description = "BIO TestSuite description";
 }

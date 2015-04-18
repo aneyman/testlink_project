@@ -1,5 +1,6 @@
 package tests;
 
+import models.TestSuite;
 import models.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,9 +11,8 @@ import pages.TestSuiteManagementPage;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Tester on 17.04.2015.
- */
+
+
 public class TestSuiteTest {
 
     WebDriver driver;
@@ -32,14 +32,11 @@ public class TestSuiteTest {
     public void positiveTestSuiteTest() {
         TestlinkHomePage homepage = new TestlinkHomePage(driver);
         TestSuiteManagementPage testSuiteManagementPage = homepage.openTestSuiteManagementPage();
-        testSuiteManagementPage.openPanelTestSuite();
+        TestSuiteEditPage testSuiteEditPage = testSuiteManagementPage.testSuiteCreate();
+
+
+        TestSuite testSuite = new TestSuite();
+        testSuiteEditPage.createTestSuite(testSuite);
     }
 }
 
-        /*       TestplanManagementPage testplanManagementPage = homepage.openTestPlanManagementPage();
-        TestplanEditPage editPage = testplanManagementPage.createTestPlan();
-
-
-    }
-}
-*/

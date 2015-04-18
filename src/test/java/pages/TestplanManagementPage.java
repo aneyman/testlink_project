@@ -6,9 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-/**
- * Created by admin on 08.04.2015.
- */
+
 public class TestplanManagementPage {
 
     private WebDriver driver;
