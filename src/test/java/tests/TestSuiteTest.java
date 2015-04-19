@@ -1,5 +1,6 @@
 package tests;
 
+import models.TestPlan;
 import models.TestSuite;
 import models.User;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +37,13 @@ public class TestSuiteTest {
 
 
         TestSuite testSuite = new TestSuite();
-        testSuiteEditPage.createTestSuite(testSuite);
+     //   testSuiteEditPage.createTestSuite(testSuite);
+
+
+        //testSuiteManagementPage.createTestCase();
+
+        TestPlan testPlan = new TestPlan();
+        testSuiteManagementPage.createTestCase(testSuite, testPlan);
     }
 }
 
