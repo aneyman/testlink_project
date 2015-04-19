@@ -4,8 +4,10 @@ import models.TestCase;
 import models.TestPlan;
 import models.TestSuite;
 import models.User;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.*;
@@ -24,7 +26,6 @@ public class TestSuiteTest {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(new User());
     }
@@ -43,7 +44,20 @@ public class TestSuiteTest {
         TestCase testCase = new TestCase();
         testSuiteManagementPage.createTestCase(testSuite, testCase);
 
-        testSuiteManagementPage.deleteTestSuite(testSuite);
+        deleteMyTestSuite(testSuite);
+    }
+
+    @AfterTest
+    public void shutEnv() {
+        if (driver != null) driver.quit();
+    }
+
+
+    public void deleteMyTestSuite(TestSuite testSuite){
+        TestSuiteManagementPage testSuiteManagementPage = new TestSuiteManagementPage(driver);
+        testSuiteManagementPage.deleteMyTestSuite(testSuite);
     }
 }
+
+
 

@@ -14,9 +14,6 @@ public class TestSuiteManagementPage {
     private static final By openTestSuiteEditPanel = By.xpath("html/body/div[1]/img");
     private static final By createTestSuiteButton = By.id("new_testsuite");
 
-
-
-
     public TestSuiteManagementPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -36,7 +33,6 @@ public class TestSuiteManagementPage {
     }
 
 
-
     public void createTestCase(TestSuite testSuite, TestCase testCase) {
 
         String name = testSuite.name;
@@ -46,13 +42,8 @@ public class TestSuiteManagementPage {
         final By testCaseNameField = By.id("testcase_name");
         final By testCaseCreateButton = By.id("do_create_button");
         final By testStepCreateButton = By.name("create_step");
-
-        final By testStepDescriptionField = By.xpath(".//*[@id='cke_contents_steps']");
-
+        //final By testStepDescriptionField = By.xpath(".//*[@id='cke_contents_steps']");
         final By testStepSaveAndExitButton = By.id("do_update_step_and_exit");
-
-
-
 
         driver.switchTo().defaultContent()
                 .switchTo().frame("mainframe")
@@ -72,13 +63,13 @@ public class TestSuiteManagementPage {
     }
 
 
-    public void deleteTestSuite(TestSuite testSuite) {
+    public void deleteMyTestSuite(TestSuite testSuite) {
+
         String name = testSuite.name;
         final By selectTestSuite = By.xpath("//a/span/span[contains(text(),'" + name + "')]");
         final By openTestSuiteControls = By.xpath("html/body/div[1]/img[2]");
         final By deleteTestSuiteButton = By.id("delete_testsuite");
         final By deleteTestSuiteSubmitButton = By.xpath("html/body/div[1]/form/input[3]");
-
 
         driver.switchTo().defaultContent()
                 .switchTo().frame("mainframe")

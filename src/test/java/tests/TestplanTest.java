@@ -17,9 +17,7 @@ import pages.TestplanManagementPage;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by admin on 08.04.2015.
- */
+
 public class TestplanTest {
 
     WebDriver driver;
@@ -48,10 +46,8 @@ public class TestplanTest {
     }
 
     @AfterTest
-    public void shutEnv() {
-        //deleteTestPlan(testPlan);
-               if (driver != null)
-            driver.quit();
+        public void shutEnv() {
+        if (driver != null) driver.quit();
     }
 
     public void deleteTestPlan(TestPlan testPlan) {

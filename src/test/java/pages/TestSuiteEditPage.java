@@ -12,8 +12,6 @@ public class TestSuiteEditPage {
     private static final By descriptionField = By.cssSelector(".cke_show_borders>p");
     private static final By createTestSuiteButton = By.name("add_testsuite_button");
 
-
-
     public TestSuiteEditPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -23,7 +21,4 @@ public class TestSuiteEditPage {
         driver.findElement(createTestSuiteButton).click();
     }
 
-    public void selectTestSuite(String name) {
-
-    }
 }
