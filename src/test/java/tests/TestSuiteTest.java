@@ -1,5 +1,6 @@
 package tests;
 
+import models.TestCase;
 import models.TestPlan;
 import models.TestSuite;
 import models.User;
@@ -37,13 +38,12 @@ public class TestSuiteTest {
 
 
         TestSuite testSuite = new TestSuite();
-     //   testSuiteEditPage.createTestSuite(testSuite);
+        testSuiteEditPage.createTestSuite(testSuite);
 
+        TestCase testCase = new TestCase();
+        testSuiteManagementPage.createTestCase(testSuite, testCase);
 
-        //testSuiteManagementPage.createTestCase();
-
-        TestPlan testPlan = new TestPlan();
-        testSuiteManagementPage.createTestCase(testSuite, testPlan);
+        testSuiteManagementPage.deleteTestSuite(testSuite);
     }
 }
 

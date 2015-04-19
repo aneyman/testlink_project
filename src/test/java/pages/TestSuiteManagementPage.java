@@ -1,10 +1,9 @@
 package pages;
 
-import models.TestPlan;
+import models.TestCase;
 import models.TestSuite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 
 public class TestSuiteManagementPage {
@@ -38,12 +37,12 @@ public class TestSuiteManagementPage {
 
 
 
-    public void createTestCase(TestSuite testSuite, TestPlan testPlan) {
+    public void createTestCase(TestSuite testSuite, TestCase testCase) {
 
         String name = testSuite.name;
         final By selectTestSuite = By.xpath("//a/span/span[contains(text(),'" + name + "')]");
         final By openTestSuiteControls = By.xpath("html/body/div[1]/img[2]");
-        final By createTestPlanButton = By.id("create_tc");
+        final By createTestCaseButton = By.id("create_tc");
         final By testCaseNameField = By.id("testcase_name");
         final By testCaseCreateButton = By.id("do_create_button");
         final By testStepCreateButton = By.name("create_step");
@@ -65,11 +64,34 @@ public class TestSuiteManagementPage {
                 .switchTo().frame("workframe")
                 .findElement(openTestSuiteControls).click();
 
-        driver.findElement(createTestPlanButton).click();
-        driver.findElement(testCaseNameField).sendKeys(testPlan.name);
+        driver.findElement(createTestCaseButton).click();
+        driver.findElement(testCaseNameField).sendKeys(testCase.name);
         driver.findElement(testCaseCreateButton).click();
         driver.findElement(testStepCreateButton).click();
         driver.findElement(testStepSaveAndExitButton).click();
+    }
+
+
+    public void deleteTestSuite(TestSuite testSuite) {
+        String name = testSuite.name;
+        final By selectTestSuite = By.xpath("//a/span/span[contains(text(),'" + name + "')]");
+        final By openTestSuiteControls = By.xpath("html/body/div[1]/img[2]");
+        final By deleteTestSuiteButton = By.id("delete_testsuite");
+        final By deleteTestSuiteSubmitButton = By.xpath("html/body/div[1]/form/input[3]");
+
+
+        driver.switchTo().defaultContent()
+                .switchTo().frame("mainframe")
+                .switchTo().frame("treeframe")
+                .findElement(selectTestSuite).click();
+
+        driver.switchTo().defaultContent()
+                .switchTo().frame("mainframe")
+                .switchTo().frame("workframe")
+                .findElement(openTestSuiteControls).click();
+
+        driver.findElement(deleteTestSuiteButton).click();
+        driver.findElement(deleteTestSuiteSubmitButton).click();
     }
 
 }
