@@ -1,9 +1,6 @@
 package tests;
 
-import models.TestCase;
-import models.TestPlan;
-import models.TestSuite;
-import models.User;
+import models.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -42,7 +39,9 @@ public class TestSuiteTest {
         testSuiteEditPage.createTestSuite(testSuite);
 
         TestCase testCase = new TestCase();
-        testSuiteManagementPage.createTestCase(testSuite, testCase);
+        TestStep testStep = new TestStep();
+
+        testSuiteManagementPage.createTestCase(testSuite, testCase, testStep);
 
         deleteMyTestSuite(testSuite);
     }

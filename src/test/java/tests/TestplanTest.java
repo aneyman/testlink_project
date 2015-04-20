@@ -23,7 +23,7 @@ public class TestplanTest {
     WebDriver driver;
 
     @BeforeTest
-    public void userLogin() {
+        public void userLogin() {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

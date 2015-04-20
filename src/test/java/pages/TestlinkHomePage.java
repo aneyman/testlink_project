@@ -11,17 +11,10 @@ public class TestlinkHomePage {
 
     private static final By TestPlanManagementLink = By.xpath("//*[@id='test_plan_mgmt_topics']/a[1]");
     private static final By Logout = By.xpath("//img[contains(@src,'gui/themes/default/images/computer_go.png')]");
-    private static final By TestSuiteManagementLink = By.xpath(".//*[@id='testspecification_topics']/a[1]");
-
-    private static final By actions = By.xpath("html/body/div[1]/img");
-
     private static final By editTestsLink = By.xpath(".//*[@id='testspecification_topics']/a[1]");
+
     public TestlinkHomePage(WebDriver driver) {
         this.driver = driver;
-    }
-
-    public void logout() {
-        driver.switchTo().defaultContent().switchTo().frame("titlebar").findElement(Logout).click();
     }
 
     public TestplanManagementPage openTestPlanManagementPage() {

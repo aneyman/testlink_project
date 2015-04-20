@@ -9,7 +9,6 @@ public class TestSuiteEditPage {
 
     private WebDriver driver;
     private static final By nameField = By.id("name");
-    private static final By descriptionField = By.cssSelector(".cke_show_borders>p");
     private static final By createTestSuiteButton = By.name("add_testsuite_button");
 
     public TestSuiteEditPage(WebDriver driver) {
