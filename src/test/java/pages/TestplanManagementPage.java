@@ -27,8 +27,8 @@ public class TestplanManagementPage {
     }
 
     public void deleteTestPlan(TestPlan testPlan) {
-
-        driver.findElement(By.xpath("//img[contains(@onclick, testPlan.name)]")).click();
+        String testPlanName = testPlan.name;
+        driver.findElement(By.xpath("//img[contains(@onclick, testPlanName)]")).click();
         driver.findElement(By.id("ext-gen20")).click();
     }
 }
